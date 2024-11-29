@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="786.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.johan.nomina.NominaController">
+  <tabs>
+    <Tab fx:id="PaginaRegistro" onSelectionChanged="#OnClickTabRegistro" text="Registro">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="444.0" prefWidth="615.0">
+               <children>
+                  <Label layoutX="518.0" layoutY="435.0" text="Seleccionar el banco:">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <TextField fx:id="Nombre" layoutX="235.0" layoutY="37.0" onAction="#TFNombre" />
+                  <TextField fx:id="Apellido" layoutX="235.0" layoutY="86.0" onAction="#TFApellido" />
+                  <TextField fx:id="Cedula" layoutX="234.0" layoutY="188.0" onAction="#TFCedula" />
+                  <TextField fx:id="Cargo" layoutX="234.0" layoutY="242.0" onAction="#TFCargo" />
+                  <TextField fx:id="Salario" layoutX="234.0" layoutY="292.0" onAction="#TFSalario" />
+                  <Button fx:id="Registrar" layoutX="136.0" layoutY="578.0" mnemonicParsing="false" onAction="#OnClickRegistrar" text="Registrar Empleado">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
+                  <Label layoutX="60.0" layoutY="37.0" text="Nombre">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Label layoutX="60.0" layoutY="89.0" text="Apellido">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Label layoutX="60.0" layoutY="186.0" text="ID Empleado">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Label layoutX="60.0" layoutY="240.0" text="Cargo">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Label layoutX="57.0" layoutY="286.0" text="Salario">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Button fx:id="Limpiar" layoutX="587.0" layoutY="578.0" mnemonicParsing="false" onAction="#OnClickLimpiar" text="Limpiar">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
+                  <ComboBox fx:id="Banco" layoutX="518.0" layoutY="477.0" onAction="#OnClickBancos" prefWidth="150.0" />
+                  <Label layoutX="60.0" layoutY="133.0" text="Numero de Cuenta">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <TextField fx:id="NumeroCuenta" layoutX="235.0" layoutY="135.0" onAction="#TFNumeroCuenta" />
+                  <ComboBox fx:id="Forma_Contacto" layoutX="518.0" layoutY="135.0" prefWidth="150.0" />
+                  <ComboBox fx:id="Tipo_Cuenta" layoutX="518.0" layoutY="301.0" prefWidth="150.0" />
+                  <Label layoutX="478.0" layoutY="78.0" />
+                  <TextField fx:id="CodigoEmpleado" layoutX="234.0" layoutY="347.0" />
+                  <TextField fx:id="Telefono" layoutX="234.0" layoutY="396.0" />
+                  <TextField fx:id="Email" layoutX="235.0" layoutY="452.0" />
+                  <TextField fx:id="Fax" layoutX="234.0" layoutY="506.0" />
+                  <Label layoutX="57.0" layoutY="345.0" text="Codigo Empleado">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Label layoutX="60.0" layoutY="394.0" text="Telefono">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Label layoutX="63.0" layoutY="450.0" text="Email">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Label layoutX="63.0" layoutY="504.0" text="Fax">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Label layoutX="518.0" layoutY="89.0" text="Forma de Contacto">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Label layoutX="526.0" layoutY="255.0" text="Tipo de Cuenta">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="PaginaConsultar" onSelectionChanged="#OnClickTabConsultar" text="Consultar Nomina">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="TableViewEmpleado" layoutX="-1.0" layoutY="-1.0" prefHeight="632.0" prefWidth="786.0">
+                    <columns>
+                      <TableColumn fx:id="colNombre" prefWidth="75.0" text="Nombre" />
+                      <TableColumn fx:id="colApellido" prefWidth="75.0" text="Apellido" />
+                        <TableColumn fx:id="colCargo" prefWidth="75.0" text="Cargo" />
+                        <TableColumn fx:id="colCedula" prefWidth="75.0" text="Cedula" />
+                        <TableColumn fx:id="colBanco" prefWidth="75.0" text="Banco" />
+                        <TableColumn fx:id="colSalarioBR" prefWidth="75.0" text="Salario Bruto" />
+                        <TableColumn fx:id="colISR" prefWidth="75.0" text="ISR" />
+                        <TableColumn fx:id="colSFS" prefWidth="75.0" text="SFS" />
+                        <TableColumn fx:id="colSalarioNeto" prefWidth="75.0" text="Salario Neto" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
